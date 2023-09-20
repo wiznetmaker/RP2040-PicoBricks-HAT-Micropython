@@ -1,3 +1,32 @@
+# WIZnetMQTT API Documentation
+
+## WIZnetMQTT
+
+### Methods
+
+- `__init__(self, username, broker_ip, pub_topic, sub_topic, keep_alive, callback=None)`: Initializes the WIZnetMQTT with the given parameters.
+    - `username`: User identifier for the MQTT connection.
+    - `broker_ip`: IP address of the MQTT broker.
+    - `pub_topic`: The topic on which to publish messages.
+    - `sub_topic`: The topic on which to subscribe for incoming messages.
+    - `keep_alive`: The keep-alive time in seconds for the MQTT connection.
+    - `callback`: (Optional) Function to be called when a subscribed message is received.
+
+- `init_mqtt(self)`: Initializes the MQTT client, sets the subscription callback, connects to the broker, and subscribes to the specified topic.
+
+- `sub_cb(self, sub_topic, msg)`: Callback function when a subscribed message is received.
+    - `sub_topic`: The topic of the received message.
+    - `msg`: The content of the received message.
+
+- `publish(self, message)`: Publishes a message to the previously specified publish topic.
+    - `message`: The content to be published.
+
+- `check_msg(self)`: Checks for any received MQTT messages. 
+
+- `disconnect(self)`: Disconnects the MQTT client from the broker.
+
+
+
 # Picobricks API Documentation
 
 ## picobricks_button
